@@ -53,9 +53,9 @@ while(cap.isOpened()):
     # print str(time.clock() - t)
     while (time.clock() - t < 0.0714285):
         d=d+1
-    print str(d)
+    # print str(d)
     t = time.clock()
-    print (t)
+    # print (t)
     
     # # Uncomment to display time between frames
     # print str(time.clock() - t)
