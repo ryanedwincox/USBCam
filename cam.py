@@ -38,7 +38,7 @@ fourcc = cv2.cv.CV_FOURCC('M','J','P','G')
 wd = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
 ht = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
 fps = int(14)
-outputFileName = basename + str(cameraNum) + '_' + strftime('%Y%m%d_%H %M %S', localtime())
+outputFileName = basename + '_' + strftime('%Y%m%d_%H %M %S', localtime())
 out = cv2.VideoWriter(outputFileName + '.avi',fourcc, fps, (wd,ht), True)
 
 # Start time
