@@ -50,17 +50,10 @@ while(cap.isOpened()):
     
     # Finish waiting for 40ms before continuing to record and display frame
     d=0
-    # print str(time.clock() - t)
-    while (time.clock() - t < 0.0714285):
+    while (time.clock() - t < 1.0/fps):
         d=d+1
-    # print str(d)
     t = time.clock()
-    # print (t)
-    
-    # # Uncomment to display time between frames
-    # print str(time.clock() - t)
-    # t = time.clock()
-    
+
     # Write frame to file
     out.write(frame)
 
