@@ -35,6 +35,8 @@ cap = cv2.VideoCapture(cameraNum)
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.cv.CV_FOURCC('M','J','P','G')
+cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 240)
+cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 320)
 wd = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
 ht = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
 fps = int(14)
@@ -46,14 +48,17 @@ t = time.clock() # starts at zero when the program starts
 
 while(cap.isOpened()):
     # Capture frame-by-frame
-    ret, frame = cap.read()
+    # ret, frame = cap.read()
+    ret = cap.grab()
+    ret, frame = cap.retrieve()
     
     # Finish waiting for 40ms before continuing to record and display frame
-    d=0
+    
     while (time.clock() - t < 1.0/fps):
-        d=d+1
+        pass
     t = time.clock()
-
+    print(str(time.clock()))
+    
     # Write frame to file
     out.write(frame)
 
